@@ -69,7 +69,7 @@ export class FirestoreService {
   //****Custom Methods
   // Custom update method
   update<T>(ref: DocPredicate<T>, data: any) {
-    const timestamp = this.timestamp.toDate();
+    const timestamp = this.timestamp;
     return this.doc(ref).update({
       ...data,
       updatedAt: timestamp
@@ -77,7 +77,7 @@ export class FirestoreService {
   }
   // custom set method
   set<T>(ref: DocPredicate<T>, data: any) {
-    const timestamp = this.timestamp.Date();
+    const timestamp = this.timestamp;
     return this.doc(ref).set({
       ...data,
       updatedAt: timestamp,
@@ -86,9 +86,10 @@ export class FirestoreService {
   }
   // Custom add Method
   add<T>(ref: CollectionPredicate<T>, data) {
-    const timestamp = this.timestamp.toDate();
+    const timestamp = this.timestamp;
     return this.col(ref).add({
       ...data,
+      firestoreInSnapshots:true,
       updatedAt: timestamp,
       createdAt: timestamp
     })
