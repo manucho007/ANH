@@ -1,0 +1,148 @@
+<div class="container">
+  <div class="card border-info">
+    <h3 class="card-header">Inspección Inicial</h3>
+    <div class="card-body">
+      <form (ngSubmit)="saveInspeccion()">
+        <fieldset>
+          <legend>Terreno</legend>
+          <div class="form-group">
+            <label for="razonSocial">Razón Social</label>
+            <input type="text" name="razonSocial" class="form-control" [(ngModel)]="inspeccion.razonSocial" placeholder="Razon Social">
+          </div>
+          <div class="form-group">
+            <label for="representanteLegal">Representante Legal</label>
+            <input type="text" name="representanteLegal" class="form-control" [(ngModel)]="inspeccion.representanteLegal" placeholder="Representante Legal">
+          </div>
+          <div class="form-group">
+            <label for="tipoDeEstacion">Tipo de Estación</label>
+            <input type="text" name="tipoDeEstacion" class="form-control" [(ngModel)]="inspeccion.tipoDeEstacion" placeholder="Tipo de Estación">
+          </div>
+          <div class="form-group">
+            <label for="direccion">Dirección</label>
+            <input type="text" name="direccion" class="form-control" [(ngModel)]="inspeccion.direccion" placeholder="Dirección">
+          </div>
+          <div class="form-group">
+            <label for="municipio">Municipio/Localidad</label>
+            <input type="text" name="municipio" class="form-control" [(ngModel)]="inspeccion.municipio" placeholder="Municipio/Localidad">
+          </div>
+          <div class="form-group">
+            <label for="telefonoNum">Telefono</label>
+            <input type="number" name="telefonoNum" class="form-control" [(ngModel)]="inspeccion.telefonoNum" placeholder="Telefono">
+          </div>
+          <div class="form-group">
+            <label for="departamento">Departamento</label>
+            <input type="text" name="departamento" class="form-control" [(ngModel)]="inspeccion.departamento" placeholder="Departamento">
+          </div>
+          <div class="form-group">
+            <label for="fechaInspeccion">Fecha de Inspección</label>
+            <input type="date" name="fechaInspeccion" class="form-control" [(ngModel)]="inspeccion.fechaInspeccion" placeholder="Fecha de Inspección">
+          </div>
+          <h4>Terreno</h4>
+          <div class="form-group">
+            <label for="inclinacion">Inclinación</label>
+            <select class="form-control" id="inclinacion" [(ngModel)]="inspeccion.inclinacion">
+              <option [ngValue]="1">Plano</option>
+              <option [ngValue]="2">Inclinado</option>
+              <option [ngValue]="3">Muy Inclinado</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ubicacion">Ubicación</label>
+            <select class="form-control" id="ubicacion" [(ngModel)]="inspeccion.ubicacion">
+              <option value="Calle">Calle</option>
+              <option value="2">Avenida</option>
+              <option value="3">Carretera</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ubicacionLote">Ubicación Lote</label>
+            <select class="form-control" id="ubicacionLote" [(ngModel)]="inspeccion.ubicacionLote">
+              <option value="Esquina">Esquina</option>
+              <option value="2">Mitad de Cuadra</option>
+              <option value="3">Otra</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="areaTerreno">Área del Terreno</label>
+            <input type="number" name="areaTerreno" class="form-control" [(ngModel)]="inspeccion.areaTerreno" placeholder="Área del Terreno">
+          </div>
+          <div class="form-group">
+            <label for="colindancias">Colidancias</label>
+            <select class="form-control" id="colindancias" [(ngModel)]="inspeccion.colindancias">
+              <option value="1">Rural</option>
+              <option value="2">Urbano</option>
+              <option value="3">Edificio</option>
+              <option value="4">N° de Pisos</option>
+              <option value="5">Casa</option>
+              <option value="6">Escuela</option>
+              <option value="7">Mercado</option>
+              <option value="8">Otros</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="distanciaCentrosAglo">Distancia a centros con aglomeración de personas</label>
+            <input type="number" name="distanciaCentrosAglo" class="form-control" [(ngModel)]="inspeccion.distanciaCentrosAglo" placeholder="Distancia">
+          </div>
+          <h4>Tipo de Vías</h4>
+          <div class="form-group">
+            <label for="calzada">Calzada</label>
+            <select class="form-control" id="calzada" [(ngModel)]="inspeccion.calzada">
+              <option value="1">Asfalto</option>
+              <option value="2">Loseta</option>
+              <option value="3">Pavimento Rígido</option>
+              <option value="4">Adoquín</option>
+              <option value="5">Empedrado</option>
+              <option value="6">Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="flujoVehicular">Flujo Vehicular</label>
+            <select class="form-control" id="flujoVehicular" [(ngModel)]="inspeccion.flujoVehicular">
+              <option value="1">Alto</option>
+              <option value="2">Medio</option>
+              <option value="3">Bajo</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="distanciaEstacionProx">Distancia a estación mas próxima</label>
+            <input type="number" name="distanciaEstacionProx" class="form-control" [(ngModel)]="inspeccion.distanciaEstacionProx" placeholder="Distancia">
+          </div>
+          <h4>Servicios</h4>
+          <div class="form-group">
+            <label for="electricidad">Electricidad</label>
+            <select class="form-control" id="electricidad" [(ngModel)]="inspeccion.electricidad">
+              <option [ngValue]="true">Si</option>
+              <option [ngValue]="false">No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="aguaPotable">Agua Potable</label>
+            <select class="form-control" id="aguaPotable" [(ngModel)]="inspeccion.aguaPotable">
+              <option [ngValue]="true">Si</option>
+              <option [ngValue]="false">No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="telefono">Telefono</label>
+            <select class="form-control" id="telefono" [(ngModel)]="inspeccion.telefono">
+              <option [ngValue]="true">Si</option>
+              <option [ngValue]="false">No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="alcantarillado">Alcantarillado</label>
+            <select class="form-control" id="alcantarillado" [(ngModel)]="inspeccion.alcantarillado">
+              <option [ngValue]="true">Si</option>
+              <option [ngValue]="false">No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="observaciones">Observaciones</label>
+            <textarea class="form-control" id="observaciones" rows="3" [(ngModel)]="inspeccion.observaciones"></textarea>
+          </div>
+          <button type="submit" value="Submit" class="btn btn-success"> Guardar</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
