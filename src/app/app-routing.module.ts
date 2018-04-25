@@ -8,6 +8,7 @@ import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from './ui/home/home.component';
 import { MenuEstacionServicioComponent } from './estacion-servicio/menu-estacion-servicio/menu-estacion-servicio.component';
 import { InspeccionInicialComponent } from './estacion-servicio/inspeccion-inicial/inspeccion-inicial.component';
+import { PlanillaInspeccionIniComponent } from './estacion-servicio/planilla-inspeccion-ini/planilla-inspeccion-ini.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   component: InspeccionInicialComponent
   },
   {
+  path: 'planillaInicial',
+  component: PlanillaInspeccionIniComponent
+  },
+  {
     path: '**',
     component: HomeComponent
   }
@@ -33,7 +38,8 @@ const routes: Routes = [
     LoginComponent,
     HomeComponent,
     MenuEstacionServicioComponent,
-    InspeccionInicialComponent
+    InspeccionInicialComponent,
+    PlanillaInspeccionIniComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
