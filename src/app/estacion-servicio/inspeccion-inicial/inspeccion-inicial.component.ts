@@ -28,6 +28,7 @@ inspeccion:InspeccionInicial={
   ubicacion:"",
   ubicacionLote:"",
   areaTerreno:"",
+  zona:"",
   colindancias:"",
   distanciaCentrosAglo:"",
   calzada:"",

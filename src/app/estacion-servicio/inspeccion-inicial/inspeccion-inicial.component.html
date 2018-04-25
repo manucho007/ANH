@@ -67,10 +67,15 @@
             <input type="number" name="Area" class="form-control" [(ngModel)]="inspeccion.areaTerreno" placeholder="Area del Terreno">
           </div>
           <div class="form-group">
+            <label for="zona">Zona</label>
+            <select class="form-control" id="zona" [(ngModel)]="inspeccion.zona" name="zona">
+              <option value="Rural">Rural</option>
+              <option value="Urbana">Urbano</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label for="colindancias">Colidancias</label>
             <select class="form-control" id="colindancias" [(ngModel)]="inspeccion.colindancias" name="colidancias">
-              <option value="Rural">Rural</option>
-              <option value="Urbano">Urbano</option>
               <option value="Edificio">Edificio</option>
               <option value="Npisos">N° de Pisos</option>
               <option value="Casa">Casa</option>
