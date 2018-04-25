@@ -95,9 +95,9 @@ export class FirestoreService {
     })
   }
 
-  // Use of geopoint
-  geopoint(lat: number, lng: number) {
-    return new firebase.firestore.GeoPoint(lat, lng);
-  }
+  // // Use of geopoint
+  // geopoint(lat: number, lng: number) {
+  //   return new firebase.firestore.GeoPoint(lat, lng);
+  // }
 
 }
