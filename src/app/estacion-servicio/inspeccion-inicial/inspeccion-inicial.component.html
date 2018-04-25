@@ -40,15 +40,15 @@
           <h4>Terreno</h4>
           <div class="form-group">
             <label for="inclinacion">Inclinación</label>
-            <select class="form-control" id="inclinacion" [(ngModel)]="inspeccion.inclinacion">
-              <option [ngValue]="1">Plano</option>
-              <option [ngValue]="2">Inclinado</option>
-              <option [ngValue]="3">Muy Inclinado</option>
+            <select class="form-control" id="inclinacion" [(ngModel)]="inspeccion.inclinacion" name="inclinacion">
+              <option [value]="1">Plano</option>
+              <option [value]="2">Inclinado</option>
+              <option [value]="3">Muy Inclinado</option>
             </select>
           </div>
           <div class="form-group">
             <label for="ubicacion">Ubicación</label>
-            <select class="form-control" id="ubicacion" [(ngModel)]="inspeccion.ubicacion">
+            <select class="form-control" id="ubicacion" [(ngModel)]="inspeccion.ubicacion" name="ubicacion">
               <option value="Calle">Calle</option>
               <option value="2">Avenida</option>
               <option value="3">Carretera</option>
@@ -56,7 +56,7 @@
           </div>
           <div class="form-group">
             <label for="ubicacionLote">Ubicación Lote</label>
-            <select class="form-control" id="ubicacionLote" [(ngModel)]="inspeccion.ubicacionLote">
+            <select class="form-control" id="ubicacionLote" [(ngModel)]="inspeccion.ubicacionLote" name="ubicacionLote">
               <option value="Esquina">Esquina</option>
               <option value="2">Mitad de Cuadra</option>
               <option value="3">Otra</option>
@@ -64,11 +64,11 @@
           </div>
           <div class="form-group">
             <label for="areaTerreno">Área del Terreno</label>
-            <input type="number" name="areaTerreno" class="form-control" [(ngModel)]="inspeccion.areaTerreno" placeholder="Área del Terreno">
+            <input type="number" name="Area" class="form-control" [(ngModel)]="inspeccion.areaTerreno" placeholder="Area del Terreno">
           </div>
           <div class="form-group">
             <label for="colindancias">Colidancias</label>
-            <select class="form-control" id="colindancias" [(ngModel)]="inspeccion.colindancias">
+            <select class="form-control" id="colindancias" [(ngModel)]="inspeccion.colindancias" name="colidancias">
               <option value="1">Rural</option>
               <option value="2">Urbano</option>
               <option value="3">Edificio</option>
@@ -81,12 +81,12 @@
           </div>
           <div class="form-group">
             <label for="distanciaCentrosAglo">Distancia a centros con aglomeración de personas</label>
-            <input type="number" name="distanciaCentrosAglo" class="form-control" [(ngModel)]="inspeccion.distanciaCentrosAglo" placeholder="Distancia">
+            <input type="number" name="distanciaCentrosAglo" class="form-control" [(ngModel)]="inspeccion.distanciaCentrosAglo" placeholder="Distancia" name="distancia">
           </div>
           <h4>Tipo de Vías</h4>
           <div class="form-group">
             <label for="calzada">Calzada</label>
-            <select class="form-control" id="calzada" [(ngModel)]="inspeccion.calzada">
+            <select class="form-control" id="calzada" [(ngModel)]="inspeccion.calzada" name="calzada">
               <option value="1">Asfalto</option>
               <option value="2">Loseta</option>
               <option value="3">Pavimento Rígido</option>
@@ -97,7 +97,7 @@
           </div>
           <div class="form-group">
             <label for="flujoVehicular">Flujo Vehicular</label>
-            <select class="form-control" id="flujoVehicular" [(ngModel)]="inspeccion.flujoVehicular">
+            <select class="form-control" id="flujoVehicular" [(ngModel)]="inspeccion.flujoVehicular" name="flujoVehicular">
               <option value="1">Alto</option>
               <option value="2">Medio</option>
               <option value="3">Bajo</option>
@@ -110,35 +110,35 @@
           <h4>Servicios</h4>
           <div class="form-group">
             <label for="electricidad">Electricidad</label>
-            <select class="form-control" id="electricidad" [(ngModel)]="inspeccion.electricidad">
+            <select class="form-control" id="electricidad" [(ngModel)]="inspeccion.electricidad" name="electricidad">
               <option [ngValue]="true">Si</option>
               <option [ngValue]="false">No</option>
             </select>
           </div>
           <div class="form-group">
             <label for="aguaPotable">Agua Potable</label>
-            <select class="form-control" id="aguaPotable" [(ngModel)]="inspeccion.aguaPotable">
+            <select class="form-control" id="aguaPotable" [(ngModel)]="inspeccion.aguaPotable" name="aguaPotable">
               <option [ngValue]="true">Si</option>
               <option [ngValue]="false">No</option>
             </select>
           </div>
           <div class="form-group">
             <label for="telefono">Telefono</label>
-            <select class="form-control" id="telefono" [(ngModel)]="inspeccion.telefono">
+            <select class="form-control" id="telefono" [(ngModel)]="inspeccion.telefono" name="telefono">
               <option [ngValue]="true">Si</option>
               <option [ngValue]="false">No</option>
             </select>
           </div>
           <div class="form-group">
             <label for="alcantarillado">Alcantarillado</label>
-            <select class="form-control" id="alcantarillado" [(ngModel)]="inspeccion.alcantarillado">
+            <select class="form-control" id="alcantarillado" [(ngModel)]="inspeccion.alcantarillado" name="alcantarillado">
               <option [ngValue]="true">Si</option>
               <option [ngValue]="false">No</option>
             </select>
           </div>
           <div class="form-group">
             <label for="observaciones">Observaciones</label>
-            <textarea class="form-control" id="observaciones" rows="3" [(ngModel)]="inspeccion.observaciones"></textarea>
+            <textarea class="form-control" id="observaciones" rows="3" [(ngModel)]="inspeccion.observaciones" name="observaciones"></textarea>
           </div>
           <button type="submit" value="Submit" class="btn btn-success"> Guardar</button>
         </fieldset>
