@@ -1,10 +1,10 @@
 {
-    "short_name": "Planillas",
-    "name": "PLanillas",
+    "short_name": "Inspecciones UEL",
+    "name": "Inspecciones UEL",
     "start_url": "/",
 
-    "theme_color": "#6055dd",
-    "background_color": "#2a6898",
+    "theme_color": "rgb(22, 118, 59)",
+    "background_color": "rgb(97, 179, 68)",
 
     "display": "standalone",
     "orientation": "portrait",
