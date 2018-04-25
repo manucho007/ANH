@@ -41,25 +41,25 @@
           <div class="form-group">
             <label for="inclinacion">Inclinación</label>
             <select class="form-control" id="inclinacion" [(ngModel)]="inspeccion.inclinacion" name="inclinacion">
-              <option [value]="1">Plano</option>
-              <option [value]="2">Inclinado</option>
-              <option [value]="3">Muy Inclinado</option>
+              <option value="Plano">Plano</option>
+              <option value="Inclinado">Inclinado</option>
+              <option value="MuyInclinado">Muy Inclinado</option>
             </select>
           </div>
           <div class="form-group">
             <label for="ubicacion">Ubicación</label>
             <select class="form-control" id="ubicacion" [(ngModel)]="inspeccion.ubicacion" name="ubicacion">
-              <option value="Calle">Calle</option>
-              <option value="2">Avenida</option>
-              <option value="3">Carretera</option>
+              <option value="calle">Calle</option>
+              <option value="Avenida">Avenida</option>
+              <option value="Carretera">Carretera</option>
             </select>
           </div>
           <div class="form-group">
             <label for="ubicacionLote">Ubicación Lote</label>
             <select class="form-control" id="ubicacionLote" [(ngModel)]="inspeccion.ubicacionLote" name="ubicacionLote">
               <option value="Esquina">Esquina</option>
-              <option value="2">Mitad de Cuadra</option>
-              <option value="3">Otra</option>
+              <option value="MitadCuadra">Mitad de Cuadra</option>
+              <option value="Otra">Otra</option>
             </select>
           </div>
           <div class="form-group">
@@ -69,14 +69,14 @@
           <div class="form-group">
             <label for="colindancias">Colidancias</label>
             <select class="form-control" id="colindancias" [(ngModel)]="inspeccion.colindancias" name="colidancias">
-              <option value="1">Rural</option>
-              <option value="2">Urbano</option>
-              <option value="3">Edificio</option>
-              <option value="4">N° de Pisos</option>
-              <option value="5">Casa</option>
-              <option value="6">Escuela</option>
-              <option value="7">Mercado</option>
-              <option value="8">Otros</option>
+              <option value="Rural">Rural</option>
+              <option value="Urbano">Urbano</option>
+              <option value="Edificio">Edificio</option>
+              <option value="Npisos">N° de Pisos</option>
+              <option value="Casa">Casa</option>
+              <option value="Escuela">Escuela</option>
+              <option value="Mercado">Mercado</option>
+              <option value="Otros">Otros</option>
             </select>
           </div>
           <div class="form-group">
@@ -87,25 +87,29 @@
           <div class="form-group">
             <label for="calzada">Calzada</label>
             <select class="form-control" id="calzada" [(ngModel)]="inspeccion.calzada" name="calzada">
-              <option value="1">Asfalto</option>
-              <option value="2">Loseta</option>
-              <option value="3">Pavimento Rígido</option>
-              <option value="4">Adoquín</option>
-              <option value="5">Empedrado</option>
-              <option value="6">Otro</option>
+              <option value="Asfalto">Asfalto</option>
+              <option value="Loseta">Loseta</option>
+              <option value="PavimentoRigido">Pavimento Rígido</option>
+              <option value="Adoquin">Adoquín</option>
+              <option value="Empedrado">Empedrado</option>
+              <option value="Otro">Otro</option>
             </select>
           </div>
           <div class="form-group">
             <label for="flujoVehicular">Flujo Vehicular</label>
             <select class="form-control" id="flujoVehicular" [(ngModel)]="inspeccion.flujoVehicular" name="flujoVehicular">
-              <option value="1">Alto</option>
-              <option value="2">Medio</option>
-              <option value="3">Bajo</option>
+              <option value="Alto">Alto</option>
+              <option value="Medio">Medio</option>
+              <option value="Bajo">Bajo</option>
             </select>
           </div>
           <div class="form-group">
             <label for="distanciaEstacionProx">Distancia a estación mas próxima</label>
             <input type="number" name="distanciaEstacionProx" class="form-control" [(ngModel)]="inspeccion.distanciaEstacionProx" placeholder="Distancia">
+          </div>
+          <div class="form-group">
+            <label for="estacionMasProx">Estación más Proxima</label>
+            <input type="text" name="estacionMasProx" class="form-control" [(ngModel)]="inspeccion.estacionMasProx" placeholder="Estación más Proxima">
           </div>
           <h4>Servicios</h4>
           <div class="form-group">
@@ -139,6 +143,78 @@
           <div class="form-group">
             <label for="observaciones">Observaciones</label>
             <textarea class="form-control" id="observaciones" rows="3" [(ngModel)]="inspeccion.observaciones" name="observaciones"></textarea>
+          </div>
+          <!-- Foto Oeste -->
+          <div class="form-group">
+            <label for="fotoOeste">Foto Oeste</label>
+            <input type="file" class="form-control-file" id="fotoOeste" aria-describedby="fileHelp" (change)="startUploadOeste($event.target.files)">
+            <small id="fileHelp" class="form-text text-muted">Seleccione la Imagen</small>
+          </div>
+              <div class="progress" *ngIf="percentageOeste |async as pct">
+                <div class="progress-bar" role="progressbar" [style.width]="pct + '%'" [attr.aria-valuenow]="pct" aria-valuemin="0" aria-valuemax="100"></div>
+                {{ pct | number }}%
+              </div>
+              <div *ngIf="downloadURLOeste | async as url">
+                <h5>Carga Completa - Foto Oeste</h5>
+                <img [src]="url" width="100px">
+                <br>
+              </div>
+          <!-- Foto Este -->
+          <div class="form-group">
+            <label for="fotoEste">Foto Este</label>
+            <input type="file" class="form-control-file" id="fotoEste" aria-describedby="fileHelp" (change)="startUploadEste($event.target.files)">
+            <small id="fileHelp" class="form-text text-muted">Seleccione la Imagen</small>
+          </div>
+              <div class="progress" *ngIf="percentageEste |async as pct">
+                <div class="progress-bar" role="progressbar" [style.width]="pct + '%'" [attr.aria-valuenow]="pct" aria-valuemin="0" aria-valuemax="100"></div>
+                {{ pct | number }}%
+              </div>
+              <div *ngIf="downloadURLEste | async as url">
+                <h5>Carga Completa - Foto Este</h5>
+                <img [src]="url" width="100px">
+                <br>
+              </div>
+          <!-- Foto Norte -->
+          <div class="form-group">
+            <label for="fotoNorte">Foto Norte</label>
+            <input type="file" class="form-control-file" id="fotoNorte" aria-describedby="fileHelp" (change)="startUploadNorte($event.target.files)">
+            <small id="fileHelp" class="form-text text-muted">Seleccione la Imagen</small>
+          </div>
+              <div class="progress" *ngIf="percentageNorte |async as pct">
+                <div class="progress-bar" role="progressbar" [style.width]="pct + '%'" [attr.aria-valuenow]="pct" aria-valuemin="0" aria-valuemax="100"></div>
+                {{ pct | number }}%
+              </div>
+              <div *ngIf="downloadURLNorte | async as url">
+                <h5>Carga Completa - Foto Norte</h5>
+                <img [src]="url" width="100px">
+                <br>
+              </div>
+          <!-- Foto Sur -->
+          <div class="form-group">
+            <label for="fotoSur">Foto Sur</label>
+            <input type="file" class="form-control-file" id="fotoEste" aria-describedby="fileHelp" (change)="startUploadSur($event.target.files)">
+            <small id="fileHelp" class="form-text text-muted">Seleccione la Imagen</small>
+          </div>
+              <div class="progress" *ngIf="percentageSur |async as pct">
+                <div class="progress-bar" role="progressbar" [style.width]="pct + '%'" [attr.aria-valuenow]="pct" aria-valuemin="0" aria-valuemax="100"></div>
+                {{ pct | number }}%
+              </div>
+              <div *ngIf="downloadURLSur | async as url">
+                <h5>Carga Completa - Foto Sur</h5>
+                <img [src]="url" width="100px">
+                <br>
+              </div>
+          <div class="form-group">
+            <label for="nombreRepresentante">Nombre del Representante</label>
+            <input type="text" name="nombreRepresentante" class="form-control" [(ngModel)]="inspeccion.nombreRepresentante" placeholder="Nombre del Representante">
+          </div>
+          <div class="form-group">
+            <label for="ciRepresentante">C.I. Representante</label>
+            <input type="text" name="ciRepresentante" class="form-control" [(ngModel)]="inspeccion.ciRepresentante" placeholder="C.I. Representante">
+          </div>
+          <div class="form-group">
+            <label for="nombreInspector">Nombre del Inspector</label>
+            <input type="text" name="nombreInspector" class="form-control" [(ngModel)]="inspeccion.nombreInspector" placeholder="Nombre del Inspector">
           </div>
           <button type="submit" value="Submit" class="btn btn-success"> Guardar</button>
         </fieldset>
