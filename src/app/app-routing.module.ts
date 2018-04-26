@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { ProfileComponent } from './user/profile/profile.component';
 import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from './ui/home/home.component';
 import { MenuEstacionServicioComponent } from './estacion-servicio/menu-estacion-servicio/menu-estacion-servicio.component';
@@ -22,6 +23,10 @@ const routes: Routes = [
   // canActivate:[AuthGuard]
   },
   {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
   path: 'inspeccionInicial',
   component: InspeccionInicialComponent,
   // canActivate:[AuthGuard]
@@ -30,6 +35,10 @@ const routes: Routes = [
   path: 'planillaInicial/:razonSocial',
   component: PlanillaInspeccionIniComponent,
   // canActivate:[AuthGuard]
+  },
+  {
+    path: '',
+    component: ProfileComponent
   },
   {
     path: '**',
@@ -44,7 +53,8 @@ const routes: Routes = [
     MenuEstacionServicioComponent,
     InspeccionInicialComponent,
     PlanillaInspeccionIniComponent,
-    DownloadUrlPipe
+    DownloadUrlPipe,
+    ProfileComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

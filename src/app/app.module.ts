@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { ProfileComponent } from './user/profile/profile.component';
 
 import { CoreModule} from './core/core.module';
 
@@ -12,10 +11,12 @@ import { AngularFireModule} from 'angularfire2';
 import { environment } from '../environments/environment';
 import { NavbarComponent } from './ui/navbar/navbar.component';
 
+import { AuthGuard } from './core/auth.guard';
+
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent,
+  
     NavbarComponent
   ],
   imports: [
@@ -24,7 +25,7 @@ import { NavbarComponent } from './ui/navbar/navbar.component';
     CoreModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
