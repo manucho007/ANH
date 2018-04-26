@@ -573,15 +573,20 @@
       <td class="topbotleri1px" align="left" valign=middle><b><font face="Arial">Aprobado con:</font></b></td>
       <td class="topbotleri1px" align="center" valign=middle><font face="Arial">RA-ANH-DJ N° 0033/2017, 2/02/2017</font></td>
     </tr>
-<!-- End top -->
-<h3 *ngIf="planilla.fotoOeste">Foto Oeste</h3>
-<img *ngIf="planilla.fotoOeste | downloadUrl | async as photoUrlOeste" [src]="photoUrlOeste" alt="Oeste" width="100px">
-<h3 *ngIf="planilla.fotoEste">Foto Este</h3>
-<img *ngIf="planilla.fotoEste | downloadUrl | async as photoUrlEste" [src]="photoUrlEste" alt="Este" width="100px">
-<h3 *ngIf="planilla.fotoNorte">Foto Norte</h3>
-<img *ngIf="planilla.fotoNorte | downloadUrl | async as photoUrlNorte" [src]="photoUrlNorte" alt="Norte" width="100px">
-<h3 *ngIf="planilla.fotoSur">Foto Sur</h3>
-<img *ngIf="planilla.fotoSur | downloadUrl | async as photoUrlSur" [src]="photoUrlSur" alt="Sur" width="100px">
 
-</table>
+    </table>
+    <hr>
+    <div class="container">
+      <h3 *ngIf="planilla.fotoOeste">Foto Oeste</h3>
+      <img *ngIf="planilla.fotoOeste | downloadUrl | async as photoUrlOeste" [src]="photoUrlOeste" alt="Oeste" width="100px">
+      <h3 *ngIf="planilla.fotoEste">Foto Este</h3>
+      <img *ngIf="planilla.fotoEste | downloadUrl | async as photoUrlEste" [src]="photoUrlEste" alt="Este" width="100px">
+      <h3 *ngIf="planilla.fotoNorte">Foto Norte</h3>
+      <img *ngIf="planilla.fotoNorte | downloadUrl | async as photoUrlNorte" [src]="photoUrlNorte" alt="Norte" width="100px">
+      <h3 *ngIf="planilla.fotoSur">Foto Sur</h3>
+      <img *ngIf="planilla.fotoSur | downloadUrl | async as photoUrlSur" [src]="photoUrlSur" alt="Sur" width="100px">
+
+    </div>
+<!-- End top -->
+
 </div>
