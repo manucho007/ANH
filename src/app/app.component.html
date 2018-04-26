@@ -1,3 +1,14 @@
 <navbar></navbar>
+<!-- <div *ngIf="notify.msg | async as msg" class="alert alert-dismissible"
+      [ngClass]="{
+                   'alert-danger': msg.style == 'error',
+                   'alert-success': msg.style == 'success',
+                   'alert-info': msg.style == 'info'
+                  }">
+
+   <button class="close" data-dismiss="alert" (click)="notify.clear()">&times;</button>
+   {{ msg.content }}
+
+ </div> -->
 <profile></profile>
 <router-outlet></router-outlet>
