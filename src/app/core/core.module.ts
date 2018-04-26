@@ -8,7 +8,6 @@ import { NotifyService } from './notify.service';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
-import { DownloadUrlPipe } from './download-url.pipe';
 
 @NgModule({
   imports: [
@@ -17,7 +16,7 @@ import { DownloadUrlPipe } from './download-url.pipe';
     AngularFirestoreModule,
     AngularFireStorageModule
   ],
-  declarations: [DownloadUrlPipe],
+  declarations: [],
   providers: [AuthService, FirestoreService, NotifyService]
 })
 export class CoreModule { }
