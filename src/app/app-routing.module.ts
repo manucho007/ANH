@@ -9,6 +9,7 @@ import { HomeComponent } from './ui/home/home.component';
 import { MenuEstacionServicioComponent } from './estacion-servicio/menu-estacion-servicio/menu-estacion-servicio.component';
 import { InspeccionInicialComponent } from './estacion-servicio/inspeccion-inicial/inspeccion-inicial.component';
 import { PlanillaInspeccionIniComponent } from './estacion-servicio/planilla-inspeccion-ini/planilla-inspeccion-ini.component';
+import { DownloadUrlPipe } from './core/download-url.pipe';
 
 const routes: Routes = [
   {
@@ -17,15 +18,18 @@ const routes: Routes = [
   },
   {
   path: 'menuEstacionServicio',
-  component: MenuEstacionServicioComponent
+  component: MenuEstacionServicioComponent,
+  // canActivate:[AuthGuard]
   },
   {
   path: 'inspeccionInicial',
-  component: InspeccionInicialComponent
+  component: InspeccionInicialComponent,
+  // canActivate:[AuthGuard]
   },
   {
-  path: 'planillaInicial',
-  component: PlanillaInspeccionIniComponent
+  path: 'planillaInicial/:razonSocial',
+  component: PlanillaInspeccionIniComponent,
+  // canActivate:[AuthGuard]
   },
   {
     path: '**',
@@ -39,7 +43,8 @@ const routes: Routes = [
     HomeComponent,
     MenuEstacionServicioComponent,
     InspeccionInicialComponent,
-    PlanillaInspeccionIniComponent
+    PlanillaInspeccionIniComponent,
+    DownloadUrlPipe
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -49,6 +54,7 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule
-  ]
+  ],
+  providers: []
 })
 export class AppRoutingModule { }
