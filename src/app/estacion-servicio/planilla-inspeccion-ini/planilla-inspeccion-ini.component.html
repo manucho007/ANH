@@ -1,3 +1,587 @@
-<p>
-  planilla-inspeccion-ini works!
-</p>
+<div class="planilla" *ngFor="let planilla of inicialCol | async">
+  <table align="left" cellspacing="0" border="0">
+
+<!-- top -->
+  	<tr>
+  		<td class="topbotleri1px" colspan=1 rowspan=4 height="109" align="center" valign=middle><b><font face="Arial"><img src="../../../assets/images/anhLogo.png" alt=""></font></b></td>
+  		<td class="topbotleri1px" colspan=8 rowspan=2 align="center"><b><font face="Arial">DIRECCIÓN DE COMERCIALIZACION DE DERIVADOS Y  DISTRIBUCIÓN DE GAS NATURAL (DCD)</font></b></td>
+  		<td class="topbotleri1px" align="left"><b><font face="Arial">Código:</font></b></td>
+  		<td class="topbotleri1px" align="left"><b><font face="Arial">DCD/UEL-R00-P3-09-F02</font></b></td>
+  	</tr>
+  	<tr>
+  		<td class="topbotleri1px" align="left"><b><font face="Arial">Versión:</font></b></td>
+  		<td class="topbotleri1px" align="center" sdval="1" sdnum="1033;"><font face="Arial">1</font></td>
+  	</tr>
+  	<tr>
+  		<td class="topbotleri1px" colspan=8 align="center" valign=middle><b><font face="Arial"> UNIDAD DE ESTACIONES DE SERVICIO Y LÍQUIDOS (UEL)</font></b></td>
+  		<td class="topbotleri1px" align="left" valign=middle><b><font face="Arial">Páginas:</font></b></td>
+  		<td class="topbotleri1px" align="center" valign=middle><font face="Arial">1 de 2</font></td>
+  	</tr>
+  	<tr>
+  		<td class="topbotleri1px" colspan=8 align="center" valign=middle><b><font face="Arial">Planilla de Inspección Técnica Inicial de Estaciones de Servicio GNV</font></b></td>
+  		<td class="topbotleri1px" align="left" valign=middle><b><font face="Arial">Aprobado con:</font></b></td>
+  		<td class="topbotleri1px" align="center" valign=middle><font face="Arial">RA-ANH-DJ N° 0033/2017, 2/02/2017</font></td>
+  	</tr>
+<!-- End top -->
+  <!-- Info -->
+  	<tr>
+  		<td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000; border-left: 2px solid #000000" colspan=2 height="20" align="left"><font face="Arial">RAZÓN SOCIAL:</font></td>
+  		<td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000; border-right: 2px solid #000000" colspan=10 align="left"><font face="Arial">{{planilla.razonSocial}}</font></td>
+  	</tr>
+    <tr>
+      <td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000; border-left: 2px solid #000000" colspan=2 height="20" align="left"><font face="Arial">REPRESENTANTE LEGAL:</font></td>
+      <td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000; border-right: 2px solid #000000" colspan=10 align="left"><font face="Arial">{{planilla.representanteLegal}}</font></td>
+    </tr>
+    <tr>
+      <td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000; border-left: 2px solid #000000" colspan=2 height="20" align="left"><font face="Arial">TIPO DE ESTACIÓN:</font></td>
+      <td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000; border-right: 2px solid #000000" colspan=10 align="left"><font face="Arial">{{planilla.tipoDeEstacion}}</font></td>
+    </tr>
+    <tr>
+      <td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000; border-left: 2px solid #000000" colspan=2 height="20" align="left"><font face="Arial">DIRECCIÓN:</font></td>
+      <td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000; border-right: 2px solid #000000" colspan=10 align="left"><font face="Arial">{{planilla.direccion}}</font></td>
+    </tr>
+  	<tr>
+  		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 2px solid #000000" colspan=2 height="20" align="left"><font face="Arial">MUNICIPIO/LOCALIDAD:</font></td>
+      <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000" colspan=5 align="left"><font face="Arial">{{planilla.municipio}} </font></td>
+  		<td class="topbotleri1px" align="left" colspan=2><font face="Arial">TELÉFONO:</font></td>
+  		<td class="topbotleri1px" colspan=3 align="left"><font face="Arial">{{planilla.telefonoNum}} </font></td>
+  	</tr>
+    <tr>
+  		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 2px solid #000000" colspan=2 height="20" align="left"><font face="Arial">DEPARTAMENTO:</font></td>
+      <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000" colspan=5 align="left"><font face="Arial">{{planilla.departamento}} </font></td>
+  		<td class="topbotleri1px" align="left" colspan=2><font face="Arial">FECHA DE INSPECCIÓN:</font></td>
+  		<td class="topbotleri1px" colspan=3 align="left"><font face="Arial">{{planilla.fechaInspeccion |date: 'dd/MM/yyyy'}}</font></td>
+  	</tr>
+    <tr>
+  		<td height="10" align="left" colspan=12><font face="Arial"> </font></td>
+  	</tr>
+    <!-- EndInfo -->
+    <!-- Terreno -->
+  	<tr>
+  		<td style="border-top: 2px solid #000000; border-left: 2px solid #000000" colspan=6 height="16" align="left"><b><font face="Arial">TERRENO</font></b></td>
+  		<td style="border-top: 2px solid #000000; border-right: 2px solid #000000" colspan=6 align="center"><b><font face="Arial"> </font></b></td>
+  	</tr>
+  	<tr>
+  		<td style="border-left: 2px solid #000000; border-right: 2px solid #000000" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+  	</tr>
+  	<tr>
+  		<td style="border-left: 2px solid #000000" colspan=3 height="20" align="left"><font face="Arial">INCLINACIÓN:</font></td>
+  		<td class="topbotleri1px" align="right" *ngIf="planilla.inclinacion == 'Plano'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.inclinacion != 'Plano'"><font face="Arial"></font></td>
+  		<td align="left" colspan=2><font face="Arial">PLANO (0°)</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.inclinacion == 'Inclinado'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.inclinacion != 'Inclinado'"><font face="Arial"></font></td>
+  		<td align="left" colspan=2><font face="Arial">INCLINADO (0°-15°)</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.inclinacion == 'MuyInclinado'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.inclinacion != 'MuyInclinado'"><font face="Arial"></font></td>
+  		<td style="border-right: 2px solid #000000" colspan=2 align="left" valign=middle><font face="Arial">MUY INCLINADO (15°-30°)</font></td>
+  	</tr>
+    <tr>
+  		<td style="border-left: 2px solid #000000; border-right: 2px solid #000000" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+  	</tr>
+    <tr>
+      <td style="border-left: 2px solid #000000" colspan=3 height="20" align="left"><font face="Arial">UBICACIÓN:</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.ubicacion == 'Calle'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.ubicacion != 'Calle'"><font face="Arial"></font></td>
+      <td align="left" colspan=2><font face="Arial">CALLE</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.ubicacion == 'Avenida'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.ubicacion != 'Avenida'"><font face="Arial"></font></td>
+      <td align="left" colspan=2><font face="Arial">AVENIDA</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.ubicacion == 'Carretera'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.ubicacion != 'Carretera'"><font face="Arial"></font></td>
+      <td style="border-right: 2px solid #000000" colspan=2 align="left" valign=middle><font face="Arial">CARRETERA</font></td>
+    </tr>
+    <tr>
+      <td style="border-left: 2px solid #000000; border-right: 2px solid #000000" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+    </tr>
+    <tr>
+      <td style="border-left: 2px solid #000000" colspan=3 height="20" align="left"><font face="Arial">UBICACIÓN LOTE:</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.ubicacionLote == 'Esquina'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.ubicacionLote != 'Esquina'"><font face="Arial"></font></td>
+      <td align="left" colspan=2><font face="Arial">EN ESQUINA</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.ubicacionLote == 'MitadCuadra'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.ubicacionLote != 'MitadCuadra'"><font face="Arial"></font></td>
+      <td align="left" colspan=2><font face="Arial">MITAD DE CUADRA</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.ubicacionLote == 'Otra'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.ubicacionLote != 'Otra'"><font face="Arial"></font></td>
+      <td style="border-right: 2px solid #000000" colspan=2 align="left" valign=middle><font face="Arial">OTRA</font></td>
+    </tr>
+    <tr>
+      <td style="border-left: 2px solid #000000; border-right: 2px solid #000000" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+    </tr>
+    <tr>
+  		<td style="border-left: 2px solid #000000" colspan=3 height="20" align="left"><font face="Arial">ÁREA DEL TERRENO:</font></td>
+      <td class="topbotleri1px" align="right" ><font face="Arial">{{planilla.areaTerreno}}</font></td>
+      <td style="border-right: 2px solid #000000" colspan=8 align="left"><font face="Arial">m2</font></td>
+  	</tr>
+    <tr>
+      <td style="border-left: 2px solid #000000; border-right: 2px solid #000000" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+    </tr>
+
+    <tr>
+      <td style="border-left: 2px solid #000000" colspan=3 height="20" align="left"><font face="Arial">ZONA:</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.zona == 'Rural'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.zona != 'Rural'"><font face="Arial"></font></td>
+      <td align="left" colspan=2><font face="Arial">RURAL</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.zona == 'Urbano'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.zona != 'Urbano'"><font face="Arial"></font></td>
+      <td style="border-right: 2px solid #000000" colspan=5 align="left" valign=middle><font face="Arial">URBANO</font></td>
+    </tr>
+    <tr>
+      <td style="border-left: 2px solid #000000; border-right: 2px solid #000000" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+    </tr>
+    <tr>
+      <td style="border-left: 2px solid #000000" colspan=3 height="20" align="left"><font face="Arial">COLINDANCIAS:</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.colindancias == 'Edificio'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.colindancias != 'Edificio'"><font face="Arial"></font></td>
+      <td align="left" colspan=2><font face="Arial">EDIFICIO</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.colindancias == 'Npisos'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.colindancias != 'Npisos'"><font face="Arial"></font></td>
+      <td align="left" colspan=2><font face="Arial">N° DE PISOS</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.colindancias == 'Casa'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.colindancias != 'Casa'"><font face="Arial"></font></td>
+      <td style="border-right: 2px solid #000000" colspan=2 align="left" valign=middle><font face="Arial">CASA</font></td>
+    </tr>
+    <tr>
+      <td style="border-left: 2px solid #000000; border-right: 2px solid #000000" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+    </tr>
+    <tr>
+      <td style="border-left: 2px solid #000000" colspan=3 height="20" align="left"><font face="Arial"></font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.colindancias == 'Escuela'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.colindancias != 'Escuela'"><font face="Arial"></font></td>
+      <td align="left" colspan=2><font face="Arial">ESCUELA</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.colindancias == 'Mercado'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.colindancias != 'Mercado'"><font face="Arial"></font></td>
+      <td align="left" colspan=2><font face="Arial">MERCADO</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.colindancias == 'Otros'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.colindancias != 'Otros'"><font face="Arial"></font></td>
+      <td style="border-right: 2px solid #000000" colspan=2 align="left" valign=middle><font face="Arial">OTROS</font></td>
+    </tr>
+    <tr>
+      <td style="border-left: 2px solid #000000; border-right: 2px solid #000000" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+    </tr>
+    <tr>
+      <td style="border-left: 2px solid #000000" colspan=3 height="20" align="left"><font face="Arial">DISTANCIA A CENTROS CON AGLOMERACIÓN DE PERSONAS:</font></td>
+      <td class="topbotleri1px" align="right" ><font face="Arial">{{planilla.distanciaCentrosAglo}}</font></td>
+      <td style="border-right: 2px solid #000000" colspan=8 align="left"><font face="Arial">m2</font></td>
+    </tr>
+    <tr>
+      <td style="border-left: 2px solid #000000; border-right: 2px solid #000000; border-bottom: 1px solid #000000;" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+    </tr>
+    <tr>
+  		<td height="10" align="left" colspan=12><font face="Arial"> </font></td>
+  	</tr>
+      <!-- End Terreno -->
+
+      <!-- Tipo de Vias -->
+    <tr>
+    	<td style="border-top: 2px solid #000000; border-left: 2px solid #000000" colspan=6 height="16" align="left"><b><font face="Arial">TIPO DE VÍAS</font></b></td>
+  		<td style="border-top: 2px solid #000000; border-right: 2px solid #000000" colspan=6 align="center"><b><font face="Arial"> </font></b></td>
+  	</tr>
+  	<tr>
+  		<td style="border-left: 2px solid #000000; border-right: 2px solid #000000" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+    </tr>
+
+    <tr>
+      <td style="border-left: 2px solid #000000" colspan=3 height="20" align="left"><font face="Arial">CALZADA:</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.calzada == 'Asfalto'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.calzada != 'Asfalto'"><font face="Arial"></font></td>
+      <td align="left" colspan=2><font face="Arial">ASFALTO</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.calzada == 'Loseta'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.calzada != 'Loseta'"><font face="Arial"></font></td>
+      <td align="left" colspan=2><font face="Arial">LOSETA</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.calzada == 'PavimentoRigido'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.calzada != 'PavimentoRigido'"><font face="Arial"></font></td>
+      <td style="border-right: 2px solid #000000" colspan=2 align="left" valign=middle><font face="Arial">PAVIMENTO RÍGIDO</font></td>
+    </tr>
+    <tr>
+      <td style="border-left: 2px solid #000000; border-right: 2px solid #000000" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+    </tr>
+    <tr>
+      <td style="border-left: 2px solid #000000" colspan=3 height="20" align="left"><font face="Arial"></font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.calzada == 'Adoquin'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.calzada != 'Adoquin'"><font face="Arial"></font></td>
+      <td align="left" colspan=2><font face="Arial">ADOQUÍN</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.calzada == 'Empedrado'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.calzada != 'Empedrado'"><font face="Arial"></font></td>
+      <td align="left" colspan=2><font face="Arial">EMPEDRADO</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.calzada == 'Otro'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.calzada != 'Otro'"><font face="Arial"></font></td>
+      <td style="border-right: 2px solid #000000" colspan=2 align="left" valign=middle><font face="Arial">OTRO</font></td>
+    </tr>
+    <tr>
+      <td style="border-left: 2px solid #000000; border-right: 2px solid #000000" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+    </tr>
+
+    <tr>
+      <td style="border-left: 2px solid #000000" colspan=3 height="20" align="left"><font face="Arial">FLUJO VEHICULAR:</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.flujoVehicular == 'Alto'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.flujoVehicular != 'Alto'"><font face="Arial"></font></td>
+      <td align="left" colspan=2><font face="Arial">ALTO</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.flujoVehicular == 'Medio'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.flujoVehicular != 'Medio'"><font face="Arial"></font></td>
+      <td align="left" colspan=2><font face="Arial">MEDIO</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.flujoVehicular == 'Bajo'"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.flujoVehicular != 'Bajo'"><font face="Arial"></font></td>
+      <td style="border-right: 2px solid #000000" colspan=2 align="left" valign=middle><font face="Arial">BAJO</font></td>
+    </tr>
+    <tr>
+      <td style="border-left: 2px solid #000000; border-right: 2px solid #000000" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+    </tr>
+
+    <tr>
+  		<td style="border-left: 2px solid #000000" height="16" align="left"><font face="Arial">DISTANCIA A E°S° MAS PRÓXIMA:</font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td class="topbotleri1px" align="left"><font face="Arial">{{planilla.distanciaEstacionProx}} </font></td>
+  		<td align="left"><font face="Arial">Km</font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td class="topbotleri1px" colspan=3 align="center"><font face="Arial">{{planilla.estacionMasProx}}</font></td>
+  		<td style="border-right: 2px solid #000000" align="left"><font face="Arial"> </font></td>
+  	</tr>
+    <tr>
+      <td style="border-left: 2px solid #000000; border-right: 2px solid #000000; border-bottom: 1px solid #000000;" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+    </tr>
+  	<tr>
+  		<td height="10" align="left" colspan=12><font face="Arial"> </font></td>
+  	</tr>
+    <!--End Tipo de Vias  -->
+
+    <!-- Servicios -->
+    <tr>
+    	<td style="border-top: 2px solid #000000; border-left: 2px solid #000000" colspan=6 height="16" align="left"><b><font face="Arial">SERVICIOS</font></b></td>
+  		<td style="border-top: 2px solid #000000; border-right: 2px solid #000000" colspan=6 align="center"><b><font face="Arial"> </font></b></td>
+  	</tr>
+  	<tr>
+  		<td style="border-left: 2px solid #000000; border-right: 2px solid #000000" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+    </tr>
+
+  	<tr>
+  		<td style="border-left: 2px solid #000000" height="16" align="left"><font face="Arial">ELECTRICIDAD</font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="right"><font face="Arial"> </font></td>
+  		<td class="topbotleri1px" align="right" *ngIf="planilla.electricidad"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="!planilla.electricidad"><font face="Arial"> </font></td>
+  		<td align="right"><font face="Arial">SI</font></td>
+  		<td align="right"><font face="Arial"> </font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.electricidad"><font face="Arial"></font></td>
+      <td class="topbotleri1px" align="right" *ngIf="!planilla.electricidad"><font face="Arial">X</font></td>
+  		<td align="right"><font face="Arial">NO</font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="right"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td style="border-right: 2px solid #000000" align="left"><font face="Arial"> </font></td>
+  	</tr>
+    <tr>
+      <td style="border-left: 2px solid #000000; border-right: 2px solid #000000" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+    </tr>
+  	<tr>
+  		<td style="border-left: 2px solid #000000" height="16" align="left"><font face="Arial">AGUA POTABLE</font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="right"><font face="Arial"> </font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.aguaPotable"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="!planilla.aguaPotable"><font face="Arial"> </font></td>
+  		<td align="right"><font face="Arial">SI</font></td>
+  		<td align="right"><font face="Arial"> </font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.aguaPotable"><font face="Arial"></font></td>
+      <td class="topbotleri1px" align="right" *ngIf="!planilla.aguaPotable"><font face="Arial">X</font></td>
+  		<td align="right"><font face="Arial">NO</font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="right"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td style="border-right: 2px solid #000000" align="left"><font face="Arial"> </font></td>
+  	</tr>
+    <tr>
+      <td style="border-left: 2px solid #000000; border-right: 2px solid #000000" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+    </tr>
+  	<tr>
+  		<td style="border-left: 2px solid #000000" height="16" align="left"><font face="Arial">TELÉFONO</font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="right"><font face="Arial"> </font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.telefono"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="!planilla.telefono"><font face="Arial"> </font></td>
+  		<td align="right"><font face="Arial">SI</font></td>
+  		<td align="right"><font face="Arial"> </font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.telefono"><font face="Arial"></font></td>
+      <td class="topbotleri1px" align="right" *ngIf="!planilla.telefono"><font face="Arial">X</font></td>
+  		<td align="right"><font face="Arial">NO</font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="right"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td style="border-right: 2px solid #000000" align="left"><font face="Arial"> </font></td>
+  	</tr>
+    <tr>
+      <td style="border-left: 2px solid #000000; border-right: 2px solid #000000" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+    </tr>
+  	<tr>
+  		<td style="border-left: 2px solid #000000" height="16" align="left"><font face="Arial">ALCANTARILLADO</font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="right"><font face="Arial"> </font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.alcantarillado"><font face="Arial">X</font></td>
+      <td class="topbotleri1px" align="right" *ngIf="!planilla.alcantarillado"><font face="Arial"> </font></td>
+  		<td align="right"><font face="Arial">SI</font></td>
+  		<td align="right"><font face="Arial"> </font></td>
+      <td class="topbotleri1px" align="right" *ngIf="planilla.alcantarillado"><font face="Arial"></font></td>
+      <td class="topbotleri1px" align="right" *ngIf="!planilla.alcantarillado"><font face="Arial">X</font></td>
+  		<td align="right"><font face="Arial">NO</font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="right"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td style="border-right: 2px solid #000000" align="left"><font face="Arial"> </font></td>
+  	</tr>
+    <tr>
+      <td style="border-left: 2px solid #000000; border-right: 2px solid #000000" colspan=12 height="5" align="left"><b><u><font face="Arial"> </font></u></b></td>
+    </tr>
+    <tr>
+  		<td class="topbotleri1px" height="10" align="left" colspan=12><font face="Arial"> </font></td>
+  	</tr>
+    <tr>
+  		<td height="10" align="left" colspan=12><font face="Arial"> </font></td>
+  	</tr>
+    <!-- End Servicios -->
+
+    <!-- OBSERVACIONES -->
+  	<tr>
+  		<td height="16" align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><b><font face="Arial">OBSERVACIONES</font></b></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  	</tr>
+    <tr>
+  		<td height="10" align="left" colspan=12><font face="Arial"> </font></td>
+  	</tr>
+    <tr>
+      <td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #000000;" height="24" align="left" colspan=12><font face="Arial">{{planilla.observaciones}} </font></td>
+    </tr>
+  	<!-- <tr>
+  		<td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000; border-left: 2px solid #000000" height="24" align="left"><font face="Arial"> </font></td>
+  		<td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000" align="left"><font face="Arial"> </font></td>
+  		<td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000" align="left"><font face="Arial"> </font></td>
+  		<td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000" align="left"><font face="Arial"> </font></td>
+  		<td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000" align="left"><font face="Arial"> </font></td>
+  		<td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000" align="left"><font face="Arial"> </font></td>
+  		<td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000" align="left"><font face="Arial"> </font></td>
+  		<td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000" align="left"><font face="Arial"> </font></td>
+  		<td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000" align="left"><font face="Arial"> </font></td>
+  		<td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000" align="left"><font face="Arial"> </font></td>
+  		<td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000" align="left"><font face="Arial"> </font></td>
+  		<td style="border-top: 2px solid #000000; border-bottom: 1px solid #000000; border-right: 2px solid #000000" align="left"><font face="Arial"> </font></td>
+  	</tr> -->
+  	<tr>
+  		<td style="border-bottom: 1px solid #000000; border-left: 2px solid #000000" height="24" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td style="border-bottom: 1px solid #000000; border-right: 2px solid #000000" align="left"><font face="Arial"> </font></td>
+  	</tr>
+  	<tr>
+  		<td style="border-bottom: 1px solid #000000; border-left: 2px solid #000000" height="24" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td style="border-bottom: 1px solid #000000; border-right: 2px solid #000000" align="left"><font face="Arial"> </font></td>
+  	</tr>
+  	<tr>
+  		<td style="border-bottom: 1px solid #000000; border-left: 2px solid #000000" height="24" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td style="border-bottom: 1px solid #000000; border-right: 2px solid #000000" align="left"><font face="Arial"> </font></td>
+  	</tr>
+  	<tr>
+  		<td style="border-bottom: 1px solid #000000; border-left: 2px solid #000000" height="24" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td style="border-bottom: 1px solid #000000; border-right: 2px solid #000000" align="left"><font face="Arial"> </font></td>
+  	</tr>
+  	<tr>
+  		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 2px solid #000000" height="24" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 2px solid #000000" align="left"><font face="Arial"> </font></td>
+  	</tr>
+  	<tr>
+  		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 2px solid #000000" height="24" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 2px solid #000000" align="left"><font face="Arial"> </font></td>
+  	</tr>
+  	<tr>
+  		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 2px solid #000000" height="24" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="topbot1px" align="left"><font face="Arial"> </font></td>
+  		<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 2px solid #000000" align="left"><font face="Arial"> </font></td>
+  	</tr>
+  	<tr>
+  		<td style="border-left: 2px solid #000000" height="20" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot1px" align="left"><font face="Arial"> </font></td>
+  		<td style="border-right: 2px solid #000000" align="left"><font face="Arial"> </font></td>
+  	</tr>
+  	<tr>
+  		<td style="border-left: 2px solid #000000" height="16" align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial">Representante</font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left" colspan=3><font face="Arial">Inspector ANH</font></td>
+  		<!-- <td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><u><font face="Arial"> </font></u></td> -->
+  		<td style="border-right: 2px solid #000000" align="left"><font face="Arial"> </font></td>
+  	</tr>
+  	<tr>
+  		<td style="border-left: 2px solid #000000" height="16" align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial">Nombre: </font></td>
+  		<td align="left" colspan=6><font face="Arial">{{planilla.nombreRepresentante}} </font></td>
+  		<!-- <td align="left"><font face="Arial"> </font></td> -->
+  		<!-- <td align="left"><font face="Arial"> </font></td> -->
+  		<!-- <td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td> -->
+  		<td align="left"><font face="Arial">Nombre: </font></td>
+  		<td align="left" colspan=2><font face="Arial">{{planilla.nombreInspector}} </font></td>
+  		<!-- <td align="left"><font face="Arial"> </font></td> -->
+  		<td style="border-right: 2px solid #000000" align="left"><font face="Arial"> </font></td>
+  	</tr>
+  	<tr>
+  		<td style="border-left: 2px solid #000000" height="16" align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial">C.I.:</font></td>
+  		<td align="left" colspan=6><font face="Arial">{{planilla.ciRepresentante}} </font></td>
+  		<!-- <td align="left"><font face="Arial"> </font></td> -->
+  		<!-- <td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td> -->
+  		<!-- <td align="left"><font face="Arial"> </font></td> -->
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td align="left"><font face="Arial"> </font></td>
+  		<td style="border-right: 2px solid #000000" align="left"><font face="Arial"> </font></td>
+  	</tr>
+  	<tr>
+  		<td style="border-bottom: 2px solid #000000; border-left: 2px solid #000000"  height="17" align="left"><font face="Arial"> </font></td>
+  		<td class="bot2px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot2px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot2px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot2px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot2px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot2px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot2px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot2px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot2px" align="left"><font face="Arial"> </font></td>
+  		<td class="bot2px" align="left"><font face="Arial"> </font></td>
+  		<td style="border-bottom: 2px solid #000000; border-right: 2px solid #000000" align="left"><font face="Arial"> </font></td>
+  	</tr>
+  </table>
+
+<hr>
+<hr>
+<hr>
+  <table align="left" cellspacing="0" border="0">
+
+<!-- top -->
+    <tr>
+      <td class="topbotleri1px" colspan=1 rowspan=4 height="109" align="center" valign=middle><b><font face="Arial"><img src="../../../assets/images/anhLogo.png" alt=""></font></b></td>
+      <td class="topbotleri1px" colspan=8 rowspan=2 align="center"><b><font face="Arial">DIRECCIÓN DE COMERCIALIZACION DE DERIVADOS Y  DISTRIBUCIÓN DE GAS NATURAL (DCD)</font></b></td>
+      <td class="topbotleri1px" align="left"><b><font face="Arial">Código:</font></b></td>
+      <td class="topbotleri1px" align="left"><b><font face="Arial">DCD/UEL-R00-P3-09-F02</font></b></td>
+    </tr>
+    <tr>
+      <td class="topbotleri1px" align="left"><b><font face="Arial">Versión:</font></b></td>
+      <td class="topbotleri1px" align="center" sdval="1" sdnum="1033;"><font face="Arial">1</font></td>
+    </tr>
+    <tr>
+      <td class="topbotleri1px" colspan=8 align="center" valign=middle><b><font face="Arial"> UNIDAD DE ESTACIONES DE SERVICIO Y LÍQUIDOS (UEL)</font></b></td>
+      <td class="topbotleri1px" align="left" valign=middle><b><font face="Arial">Páginas:</font></b></td>
+      <td class="topbotleri1px" align="center" valign=middle><font face="Arial">2 de 2</font></td>
+    </tr>
+    <tr>
+      <td class="topbotleri1px" colspan=8 align="center" valign=middle><b><font face="Arial">Planilla de Inspección Técnica Inicial de Estaciones de Servicio GNV</font></b></td>
+      <td class="topbotleri1px" align="left" valign=middle><b><font face="Arial">Aprobado con:</font></b></td>
+      <td class="topbotleri1px" align="center" valign=middle><font face="Arial">RA-ANH-DJ N° 0033/2017, 2/02/2017</font></td>
+    </tr>
+<!-- End top -->
+<h3 *ngIf="planilla.fotoOeste">Foto Oeste</h3>
+<img *ngIf="planilla.fotoOeste | downloadUrl | async as photoUrlOeste" [src]="photoUrlOeste" alt="Oeste" width="100px">
+<h3 *ngIf="planilla.fotoEste">Foto Este</h3>
+<img *ngIf="planilla.fotoEste | downloadUrl | async as photoUrlEste" [src]="photoUrlEste" alt="Este" width="100px">
+<h3 *ngIf="planilla.fotoNorte">Foto Norte</h3>
+<img *ngIf="planilla.fotoNorte | downloadUrl | async as photoUrlNorte" [src]="photoUrlNorte" alt="Norte" width="100px">
+<h3 *ngIf="planilla.fotoSur">Foto Sur</h3>
+<img *ngIf="planilla.fotoSur | downloadUrl | async as photoUrlSur" [src]="photoUrlSur" alt="Sur" width="100px">
+
+</table>
+</div>

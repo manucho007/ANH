@@ -1,0 +1,38 @@
+body,div,table,thead,tbody,tfoot,tr,th,td,p {
+  font-family:"Arial";
+  font-size:medium;
+}
+a.comment-indicator:hover + comment {
+  background:#ffd;
+  position:absolute;
+  display:block;
+  border:1px solid black;
+  padding:0.5em;
+}
+a.comment-indicator {
+  background:red;
+  display:inline-block;
+  border:1px solid black;
+  width:0.5em;
+  height:0.5em;  }
+comment { display:none;  }
+
+.topbotleri1px{
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+}
+.topbot1px{
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+.top2px{
+  border-top: 2px solid #000000
+}
+.bot2px{
+  border-bottom: 2px solid #000000;
+}
+.bot1px{
+  border-bottom: 1px solid #000000;
+}
