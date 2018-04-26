@@ -6,6 +6,7 @@ import { FirestoreService} from '../../core/firestore.service';
 import { Observable} from 'rxjs/Observable';
 import {AngularFireStorage,AngularFireUploadTask } from 'angularfire2/storage';
 import { tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 let pathEste, pathOeste, pathNorte, pathSur;
 @Component({
@@ -62,7 +63,9 @@ downloadURLEste: Observable<string>;
 downloadURLNorte: Observable<string>;
 downloadURLSur: Observable<string>;
 
-  constructor(private db:FirestoreService, private storage:AngularFireStorage) { }
+  constructor(private db:FirestoreService,
+              private storage:AngularFireStorage,
+              private router:Router) { }
 
   ngOnInit() {
   }
@@ -158,5 +161,7 @@ downloadURLSur: Observable<string>;
     confirm("¿Desea ingresar los datos?");
     console.log(this.inspeccion);
     this.db.add('iniciales',this.inspeccion);
+    this.router.navigate(['/planillaInicial',this.inspeccion.razonSocial]);
+
   }
 }
