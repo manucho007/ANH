@@ -20,5 +20,7 @@
     <img class="card-img-top" [src]="user.photoURL || 'https://cad.onshape.com/images/placeholder-user.png'" width=150px>
     <!-- <p class="text-truncate">UID: {{ user.uid }}</p> -->
     <button class="btn btn-danger" (click)="logout()">Logout</button>
+    <hr>
+    <button class="btn btn-success" routerLink="/home">Actividades</button>
   </div>
 </ng-template>
