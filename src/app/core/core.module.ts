@@ -13,7 +13,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
   imports: [
     CommonModule,
     AngularFireAuthModule,
-    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence(),
     AngularFireStorageModule
   ],
   declarations: [],
