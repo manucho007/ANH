@@ -17,7 +17,7 @@ razonSocial="";
 
   ngOnInit() {
     this.razonSocial=this.route.snapshot.params.razonSocial;
-    this.inicialCol = this.db.colWithIds$('iniciales', ref=>ref.where('razonSocial','==',`${this.razonSocial}`))
+    this.inicialCol = this.db.colWithIds$('iniciales', ref=>ref.where('razonSocial','==',`${this.razonSocial}`).orderBy("createdAt","desc").limit(1))
   }
 
 }
